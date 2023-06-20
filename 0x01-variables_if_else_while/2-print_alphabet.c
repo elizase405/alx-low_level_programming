@@ -10,8 +10,8 @@ int main(void)
 {
 	int total;
 	char a = 'a';
+
 	total = a + 25;
-	
 	while (a < total)
 	{
 		putchar(a);
@@ -19,5 +19,5 @@ int main(void)
 	}
 
 	printf("%c\n", a);
-	return 0;
+	return (0);
 }
