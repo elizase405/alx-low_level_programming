@@ -1,5 +1,5 @@
 #include <stdlib.h>
-11;rgb:1010/1010/1010#include <time.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
