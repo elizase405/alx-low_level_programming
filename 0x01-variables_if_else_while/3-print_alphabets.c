@@ -22,10 +22,10 @@ int main(void)
 	total = 0;
 	while (total < 26)
 	{
-                putchar(A);
-                A++;
+		putchar(A);
+		A++;
 		total++;
-        }
+	}
 	putchar('\n');
 	return (0);
 }
