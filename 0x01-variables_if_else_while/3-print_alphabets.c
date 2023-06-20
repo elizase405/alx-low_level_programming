@@ -19,16 +19,13 @@ int main(void)
 		a++;
 		total++;
 	}
-
 	total = 0;
-
 	while (total < 26)
-        {
+	{
                 putchar(A);
                 A++;
 		total++;
         }
-
 	putchar('\n');
 	return (0);
 }
