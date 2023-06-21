@@ -9,13 +9,12 @@
 
 void print_alphabet(void)
 {
-        int i = 0;
-        char a[26] = "abcdefghijklmnopqrstuvwxyz";
+        char a = 'a';
 
-        while (i < 26)
+        while (a <= 'z')
         {
-                _putchar(a[i]);
-                i++;
+                _putchar(a);
+                a++;
         }
         return;
 }
