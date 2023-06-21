@@ -1,20 +1,21 @@
+
 #include "main.h"
+
 /**
- * print_alphabet - entry point
- * Description - prints all alphabet, in lowercase, followed by a new line
- * Return
+ * print_alphabet - Entry point
+ * Description - prints alphabet in lowercase
+ * Return: (0)
  */
+
 void print_alphabet(void)
 {
-	char chr;
+        int i = 0;
+        char a[26] = "abcdefghijklmnopqrstuvwxyz";
 
-	chr = 'a';
-
-	while (chr <= 'z')
-	{
-		_putchar(chr);
-		chr++;
-	}
-
-	_putchar('\n');
+        while (i < 26)
+        {
+                _putchar(a[i]);
+                i++;
+        }
+        return;
 }
