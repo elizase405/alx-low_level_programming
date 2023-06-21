@@ -11,6 +11,7 @@ void print_alphabet_x10(void)
 	int i, j;
 
 	char a[26] = "abcdefghijklmnopqrstuvwxyz";
+
 	i = 0;
 
 	while (i < 10)
