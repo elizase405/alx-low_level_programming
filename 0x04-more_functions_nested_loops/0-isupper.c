@@ -8,7 +8,7 @@
  * Return 1 or 0
  */
 
-int _ispuuer(int c)
+int _isupper(int c)
 {
 	if (isupper(c))
 		return 1;
