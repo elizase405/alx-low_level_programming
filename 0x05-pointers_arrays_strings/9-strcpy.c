@@ -5,7 +5,7 @@
  * @src: pointer to array of character with string in it
  * @dest: pointer to array of character where src value will be copied into
  *
- * return: char*
+ * Return: char*
  */
 
 char *_strcpy(char *dest, char *src)
