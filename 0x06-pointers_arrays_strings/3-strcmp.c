@@ -3,7 +3,8 @@
 
 /**
  * _strcmp - compares 2 string
- * Description: returns integer less than 0 if s1 < s2. If s1 > s2 returns integer > 0. If s1 == s2, returns 0.
+ * Description: returns integer less than 0 if s1 < s2.
+ * If s1 > s2 returns integer > 0. If s1 == s2, returns 0.
  * @s1: pointer to first string
  * @s2: pointer to second string
  *
@@ -25,6 +26,8 @@ int _strcmp(char *s1, char *s2)
 		else
 			u--;
 	}
+
 	int num = s1[z] - s2[z];
-	return num;
+
+	return (num);
 }
