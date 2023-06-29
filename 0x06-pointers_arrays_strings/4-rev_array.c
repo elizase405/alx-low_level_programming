@@ -16,8 +16,11 @@ void reverse_array(int *a, int n)
 
 	while (i < n)
 	{
-		printf("last element: %d given index: %d, mutated index: %d my index: %d\n",a[i], n, j, i);
-		*(a + i) = *(a + j);
+		int temp = a[i];
+
+		a[i] = a[j];
+		a[j] = temp;
+
 		i++;
 		j--;
 	}
