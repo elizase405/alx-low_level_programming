@@ -2,8 +2,6 @@
 
 /**
  * _strspn - returns length of prefix substring
- * Description: no desription necessary as the necessary
- * things have already been said in the function name
  * @s: pointer to arry that will be check through
  * @accept: pointet to array that will be used to check into s
  *
@@ -12,19 +10,25 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int total = 0, i = 0, j;
+	int total, i = 0, j;
 
 	while (s[i])
 	{
+		total = 1;
 		j = 0;
 		while (accept[j])
 		{
 			if (s[i] == accept[j])
-				total++;
+			{
+				total = 0;
+				break;
+			}
 			j++;
 		}
 		i++;
+		if (total == 1)
+			break;
 	}
 
-	return (i - total);
+	return (i - 1);
 }
