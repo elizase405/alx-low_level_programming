@@ -15,21 +15,16 @@
 char *_strchr(char *s, char c)
 {
 	int i = 0, j;
-	char *optr;
 
 	while (s[i])
 		i++;
 
 	for (j = 0; j <= i; j++)
         {
-                if (s[j] == c)
+		if (c == s[j])
 		{
-			printf("Before: %p j:%i ", s, j);
-                        s+=j;
-			printf("After: %p\n", s);
+			s += j;
 		}
-		else
-			optr = NULL;
         }
 	return (s);
 }
