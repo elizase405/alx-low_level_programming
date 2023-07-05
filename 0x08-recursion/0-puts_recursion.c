@@ -2,9 +2,12 @@
 #include <stdio.h>
 
 /**
- * _puts_recursion: prints a string
+ * _puts_recursion - prints a string
  * @s: string to be printed
  *
+ * Description: This function works the same way
+ * as the puts function for printing a string
+ * but using recursion instead
  * Return: void
  * base case -> s == 0
  */
