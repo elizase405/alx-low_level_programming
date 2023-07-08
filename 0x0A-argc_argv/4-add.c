@@ -16,6 +16,7 @@ int main(int argc, char **argv)
 	while (i < argc)
 	{
 		int argi = atoi(argv[i]);
+		
 		if (argc == 1)
 			break;
 		else if (argi > 0)
