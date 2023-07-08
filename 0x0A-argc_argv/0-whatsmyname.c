@@ -2,8 +2,8 @@
 
 /**
  * main - Program that prints it name
- * @argc - no of arguments
- * @argv - array of string containing arguments as strings
+ * @argc: no of arguments
+ * @argv: array of string containing arguments as strings
  *
  * Return: int
  */
