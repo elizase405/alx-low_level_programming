@@ -16,12 +16,15 @@ char *_strdup(char *str)
 	int j, i = 0;
 	char *copy;
 
+	if (str == NULL)
+		return (NULL);
+
 	while (*(str + i) != 0)
 		i++;
 
 	copy = malloc(sizeof(char) * (i + 1));
 
-	if (copy == NULL || str == NULL)
+	if (copy == NULL)
 		return (NULL);
 
 	for (j = 0; j <= i; j++)
