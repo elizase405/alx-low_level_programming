@@ -60,7 +60,8 @@ int **alloc_grid(int width, int height)
 		array_of_array[i] = malloc(sizeof(int) * width);
 		if (array_of_array[i] == NULL)
 		{
-			free(array_of_array[i]);
+			for (i--; i>= 0; i--)
+				free(array_of_array[i]);
 			free(array_of_array);
 			return (NULL);
 		}
