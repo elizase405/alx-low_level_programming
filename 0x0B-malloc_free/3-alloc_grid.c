@@ -40,10 +40,12 @@ int **alloc_grid(int width, int height)
 
 	if (array_of_array == NULL)
 	{
-		do {
+		while (i < height)
+		{
 			free(array_of_array[i]);
 			i++;
-		} while (i < height);
+		}
+		free(array_of_array);
 		return (NULL);
 	}
 
