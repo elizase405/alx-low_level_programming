@@ -31,7 +31,7 @@ int *row_func(int width)
 
 int **alloc_grid(int width, int height)
 {
-	int i = 0, **array_of_array;
+	int i = 0, j, **array_of_array;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -43,6 +43,19 @@ int **alloc_grid(int width, int height)
 		free(array_of_array);
 		return (NULL);
 	}
+
+	for (j = 0; j < 1; j++)
+	{
+		while (i < height)
+		{
+			if (array_of_array[i] == NULL)
+				free(array_of_array[i]);
+			i++;
+		}
+		free(array_of_array);
+		return (NULL);
+	}
+
 
 	i = 0;
 
