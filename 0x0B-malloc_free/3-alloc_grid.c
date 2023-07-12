@@ -32,7 +32,7 @@ int *row_func(int width)
 int **alloc_grid(int width, int height)
 {
 	int **array_of_array;
-	int i, j;
+	int i;
 
 	if (width < 1 || height < 1)
 		return (NULL);
