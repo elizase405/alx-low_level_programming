@@ -31,7 +31,7 @@ int *row_func(int width)
 
 int **alloc_grid(int width, int height)
 {
-	int i = 0, **array_of_array;
+	int i = 0, j = 0, **array_of_array;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -44,7 +44,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	/*for (j = 0; j < height; j++)
+	for (j = 0; j < height; j++)
 	{
 		array_of_array[i] = malloc(sizeof(int) * width);
 		if (array_of_array[i] == NULL)
@@ -54,17 +54,9 @@ int **alloc_grid(int width, int height)
 			free(array_of_array);
 			return (NULL);
 		}
-	}*/
+	}
 	while (i < height)
 	{
-		array_of_array[i] = malloc(sizeof(int) * width);
-		if (array_of_array[i] == NULL)
-		{
-			for (i--; i>= 0; i--)
-				free(array_of_array[i]);
-			free(array_of_array);
-			return (NULL);
-		}
 		array_of_array[i] = row_func(width);
 		i++;
 	}
