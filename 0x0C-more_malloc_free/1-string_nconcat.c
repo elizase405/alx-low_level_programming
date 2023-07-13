@@ -12,8 +12,7 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i = 0, newlen, lens1, lens2, z;
-	unsigned int j = 0;
+	unsigned int lens1 = 0, lens2 = 0, z;
 	char *concat;
 
 	if (s1 == NULL)
@@ -21,32 +20,34 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[i] != 0)
-		i++;
-	while (*(s2 + j) != '\0')
-		j++;
+	while (s1[lens1] != 0)
+		lens1++;
+	while (*(s2 + lens2) != '\0')
+		lens2++;
 
-	lens1 = i;
+	if (n < lens2)
+		lens2 = n;
 
-	(n >= j) ? (lens2 = j) : (lens2 = n);
-
-	concat = malloc(sizeof(s1[i]) * (lens1 + lens2 + 1));
+	concat = malloc(sizeof(s1[lens1]) * (lens1 + lens2 + 1));
 
 	if (concat == NULL)
 		return (NULL);
 
-	for (z = 0; z < lens1; z++)
-		concat[z] = s1[z];
-
-	newlen = lens1;
-
-	for (z = 0; z < lens2; z++)
+	for (z = 0; z < (lens1 + lens2); z++)
 	{
-		concat[newlen] = s2[z];
-		newlen++;
+		if (*s1)
+		{
+			concat[z] = *s1;
+			s1++;
+		}
+		else
+		{
+			concat[z] = *s2;
+			s2++;
+		}
 	}
 
-	concat[lens1 + lens2 + 1] = '\0';
+	concat[z] = '\0';
 
 	return (concat);
 }
