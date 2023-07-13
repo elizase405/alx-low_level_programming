@@ -1,48 +1,44 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * rev - prints a string in reverse
- * @s: string to be printed in reverse
- *
- * Return: void
+ * _strlen_recursion - returns the length of a string.
+ * @s: string
+ * Return: the length of a string.
  */
-char rev(char *s)
+int _strlen_recursion(char *s)
 {
-	int len = _strlen_recursion(s) - 1;
-	printf("%d", len);
-	return (s[len]);
+	if (*s == '\0')
+		return (0);
+	else
+		return (1 + _strlen_recursion(s + 1));
 }
 
 /**
- * putss - prints a string
- * @s: string to be printed
- *
- * Return: void
- * base case -> s == 0
+ * comparator - compares each character of the string.
+ * @s: string
+ * @n1: smallest iterator.
+ * @n2: biggest iterator.
+ * Return: .
  */
-char putss(char *s)
+int comparator(char *s, int n1, int n2)
 {
-	_putchar(s[0]);
-	return (s[0]);
+	if (*(s + n1) == *(s + n2))
+	{
+		if (n1 == n2 || n1 == n2 + 1)
+			return (1);
+		return (0 + comparator(s, n1 + 1, n2 - 1));
+	}
+	return (0);
 }
 
 /**
- * is_palindrome - checks if string is
- * palindrome(same forward and backwards)
- * @s: string to be checked
- *
- * Return: int
+ * is_palindrome - detects if a string is a palindrome.
+ * @s: string.
+ * Return: 1 if s is a palindrome, 0 if not.
  */
-
 int is_palindrome(char *s)
 {
 	if (*s == '\0')
 		return (1);
-	if(*s != '\0')
-	{
-		if (putss(s) == rev(s))
-			return is_palindrome(s + 1);
-		return (0);
-	}
+	return (comparator(s, 0, _strlen_recursion(s) - 1));
 }
