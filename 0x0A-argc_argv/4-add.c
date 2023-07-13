@@ -11,23 +11,22 @@
 
 int main(int argc, char **argv)
 {
-	int i = 1, count = 0;
+	int num, digit, sum = 0;
 
-	while (i < argc)
+	for (num = 1; num < argc; num++)
 	{
-		int argi = atoi(argv[i]);
-
-		if (argc == 1)
-			break;
-		else if (argi > 0)
-			count += argi;
-		else
+		for (digit = 0; argv[num][digit]; digit++)
 		{
-			printf("Error\n");
-			return (1);
+			if (argv[num][digit] < '0' || argv[num][digit] > '9')
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		i++;
+
+		sum += atoi(argv[num]);
 	}
-	printf("%d\n", count);
+
+	printf("%d\n", sum);
 	return (0);
 }
