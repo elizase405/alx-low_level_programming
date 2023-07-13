@@ -1,9 +1,3 @@
-/**
- * is_prime_number -checks if n is a prime number
- * @n: integer to be checked
- *
- * Return: 1 if prime, else 0 (int)
- */
 
 /**
  * is_prime_num - helper function to is_prime_number
@@ -22,6 +16,13 @@ int is_prime_num(int x, int y)
 	}
 	return (is_prime_num(x, y + 1));
 }
+
+/**
+ * is_prime_number -checks if n is a prime number
+ * @n: integer to be checked
+ *
+ * Return: 1 if prime, else 0 (int)
+ */
 
 int is_prime_number(int n)
 {
