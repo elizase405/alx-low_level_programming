@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_binary - converts decimal number/base 10 to binary/base 2
  * @n: number to be turned to binary
