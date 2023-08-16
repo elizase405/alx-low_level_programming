@@ -11,7 +11,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, eof;
+	int fd, eof, write_using_posix;
 	char *buf;
 
 	if (filename == NULL)
@@ -20,13 +20,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	buf = malloc(sizeof(char) * letters);
 
-	if (fd < 0)
+	if (buf == NULL)
 		return (0);
 
 	eof = read(fd, buf, letters);
-	buf[eof] = '\0';
+	write_using_posix = write(STDOUT_FILENO, buf, eof);
 
-	printf("%s",buf);
+	if (fd < 0 || eof < 0 || write_using_posix < 0 || write_using_posix != eof)
+	{
+		free(buf);
+		return (0);
+	}
+
+	free(buf);
+	if (close(fd) < 0)
+		return (0);
 
 	return (letters);
 }
