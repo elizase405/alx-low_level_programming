@@ -17,7 +17,7 @@ oclean:
 	${RM} *.o
 
 fclean:
-	$(RM) *.c~ $(NAME) *.o
+	$(RM) *~ $(NAME) *.o
 
 re: ${SRC}
 	${RM} ${OBJ}
