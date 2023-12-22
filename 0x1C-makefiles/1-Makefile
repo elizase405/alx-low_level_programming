@@ -1,0 +1,8 @@
+# Usage
+# make		# run the all target
+
+CC := gcc
+SRC := main.c school.c
+
+all: $(SRC)
+	${CC} $< -o school
