@@ -11,14 +11,14 @@ all: ${SRC}
 	${CC} -c ${SRC} -o ${NAME}
 
 clean:
-	${RM} *~ ${NAME}
+	${RM} -f *~ ${NAME}
 
 oclean:
-	${RM} *.o
+	${RM} -f *.o
 
 fclean:
-	$(RM) *~ $(NAME) *.o
+	$(RM) -f *~ $(NAME) *.o
 
 re: ${SRC}
-	${RM} ${OBJ}
+	${RM} -f ${OBJ}
 	${CC} -c ${SRC} -o ${NAME}
