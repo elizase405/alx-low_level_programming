@@ -7,7 +7,7 @@
 # re		forces recompilation of all source files
 
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = ${SRC:.c=.o}
 NAME = school
 RM = rm -f
