@@ -5,19 +5,27 @@
     1 function - island_perimeter
 """
 
+
 def island_perimeter(grid):
     """
     Returns the perimeter of the island described in grid
     Args: grid
     """
 
-    len = 0
+    widths = []
+    length = 0
 
     for row in grid:
+        if 1 in row:
+            length += 1
+        count = 0
         for col in row:
             if col == 1:
-                len += 1
+                count += 1
+        widths.append(count)
 
-    if len > 0:
-        return 2 * (len + 1)
-    return len
+    width = max(widths)
+
+    if length > 0:
+        return 2 * (length + width)
+    return length
