@@ -1,0 +1,27 @@
+# Usage
+# make		compile all binaries
+# all		build exexutable
+# clean		deletes all Emacs and Vim temporary files along with the executable
+# oclean	deletes the object files
+# fclean	deletes all Emacs and Vim temporary files, the executable, and the object files
+# re		forces recompilation of all source files
+
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = ${SRC:.c=.o}
+NAME = school
+EM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: $(OBJ)
+	${CC} ${CFLAGS} ${OBJ} -o ${NAME}
+
+clean:
+	${RM} *~ ${NAME}
+
+oclean:
+	${RM} ${OBJ}
+
+fclean:	clean oclean
+
+re: all
