@@ -6,7 +6,7 @@
  * @a: first value
  * @b: second value
  *
- * Return int
+ * Return: int
  */
 
 size_t min(size_t a, size_t b)
@@ -15,7 +15,8 @@ size_t min(size_t a, size_t b)
 }
 
 /**
- * jump_search - search for a value in a sorted array of integers using Jump search algorithm
+ * jump_search - search for a value in a sorted array of
+ * integers using Jump search algorithm
  * @array: array to be searched through
  * @size: size of array
  * @value: value to look for
